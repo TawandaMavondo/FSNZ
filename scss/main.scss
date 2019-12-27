@@ -1,0 +1,177 @@
+html{
+    // font-size: 20px
+    scroll-behavior: smooth;
+}
+@font-face{
+    font-family: "mosterrat";
+    src: url('./../fonts-test/montserrat-v14-latin-ext_cyrillic/montserrat-v14-latin-ext_cyrillic-500.woff') format('woff');
+    font-family: 'avenir';
+    src: url('./../fonts-test/Avenir-Next-Font/AvenirNextLTPro-Regular.otf') format('otf');
+    
+}
+body{
+    font-family: 'avenir';
+    font-size: 650;
+}
+p{
+    font-size: 1.42em;
+}
+hr{
+    border-width: 3.3px;
+    width:85%;
+    margin-top: 120px;
+}
+.text-underline{
+    text-decoration: underline;
+}
+body>header{
+    nav{
+        .logo{}
+        #menuToggle{ 
+            width: 75%;
+            display: block;
+            position: relative;
+            top: 1%;
+            right: 1px;
+            z-index: 1;
+            -webkit-user-select: none;
+            user-select: none;
+            a{
+                text-decoration: none;
+                color: #232323;
+                transition: color 0.3s e
+            }
+            input{
+                display: block;
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                top: 30%;
+                right: 30px;
+                cursor: pointer;
+                opacity: 0; /* hide this */
+                z-index: 204; /* and place it over the hamburger */
+                -webkit-touch-callout: none;
+            }
+            .burger{
+                position: absolute;
+                display: none;
+                top: 30%;
+                right: 30px;
+                width: 40PX;
+                height: 40px;
+                z-index: 203;
+                transition: all ease .5s;
+                span{
+                    display: block;
+                    width: 100%;
+                    height: 4px;
+                    margin-bottom: 5px;
+                    position: relative;
+                    background: #232323;
+                    border-radius: 3px;
+                    z-index: 1;
+                    transform-origin: 4px 0px;
+                    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                                opacity 0.55s ease;
+                  
+                }
+            }
+                #menu{
+                    display: flex;
+                    z-index: 204;
+                    justify-content: flex-end ;
+                    background: white
+                }
+
+
+            input:checked ~ .burger>span{
+                opacity: 1;
+                // transform: rotate(45deg) translate(-2px, -1px);
+                background: #232323;
+             
+                &:first-child{
+                    transform: rotate(90deg) translate(-5px,-18px)
+                }
+                &:last-child{
+                    transform: rotate(90deg) translate() 
+                }
+                &:nth-child(2){
+                    display: none;
+
+                }
+                
+             }
+             input:checked ~.burger{
+                transform: rotate(45deg);
+
+             }
+             input:checked ~ #menu{
+                display:block;
+             }
+ 
+           
+        }
+    }
+    div>section{
+        height: 90vh;
+        background-image:url('./../images/IMG_1097.JPG') ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        >div{width: 66%;
+            background: rgba(0,0,0 ,0.5)
+        }
+    }
+}
+.impact-areas{
+    >div{
+        .card{
+            border: none;
+        }
+    }
+}
+.buttons{
+    >div{
+        .group-btn{
+            a{width: 47%}
+        }
+    }
+}
+.more-fairtrade {
+    >div{
+        .head-text{
+            h1{
+                border-right: 3px solid #6c757d;
+            }
+        }
+    }
+}
+
+@media screen and(max-width:576px){
+
+   header>div>section>.text{
+       width: 85%;
+   }
+   body>header>nav>div>#menuToggle #menu{
+       display: none;
+   }
+    .buttons{
+        >div{
+            .group-btn{
+                a{width: 100%}
+            }
+        }
+    }
+    body>header>nav#menuToggle> input , .burger{
+        display:block !important;
+    }
+    body>header>nav>div>{
+        position: relative !important;
+    #menuToggle #menu{
+        position: absolute;
+        width: 100%;
+        top: -20%;
+        z-index: 202;
+    }}
+}
